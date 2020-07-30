@@ -31,7 +31,6 @@ def concat_label(l1: any, l2: any) -> tuple:
 def cost_i(c1, c2):
     """
     Information loss of unifying clusters. Implements the discernibility metric.
-    TODO: Use generalization costs (?)
     :param c1:
     :param c2:
     :return:

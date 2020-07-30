@@ -104,13 +104,12 @@ def run_privacy(df, conf: Config):
         print(f"INFO: Saving {k_current}-anonymized table ...", flush=True, end="")
         df_kano.to_csv(table_file.format(k_current, l_df_kano))
         print(" done")
-        if l_df_kano < 2 and df_kano[S].nunique() == 2:  # TODO: This only works for binary attributes!
+        if l_df_kano < 2 and df_kano[S].nunique() == 2:
             print(f"---- k = {k}, l = 2 ----")
             start = datetime.now()
             df_ldiv = post_process_k_anonymity(df_kano, 2, S, QI)
             k_ldiv, n_groups_ldiv = get_k(df_ldiv, QI)
 
-            # TODO: Add limitation, if (k,l) already exists, overwrite or do nothing
             k_call.append(k)
             k_lst.append(k_ldiv)
             n_lst.append(n_groups_ldiv)

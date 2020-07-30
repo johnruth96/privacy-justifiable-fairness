@@ -112,7 +112,6 @@ class BaseAnonymizer:
         :param head_set: head set
         :return:
         """
-        # TODO: Optimize, maybe with the Union-Find-Algorithm?
         anonymization = tuple(self.expand_head_set(head_set))
         if anonymization in self._eq_class_cache:
             return self._eq_class_cache[anonymization]
